@@ -11,17 +11,17 @@ To run the project locally, follow the instructions below.
 
 ## 📁 Project Structure
 
-ntwist-frontend-assignment/
-├── index.html # Contact Form Page
-├── sort.html # Sortable List Page
-├── faq.html # FAQ Accordion Page
-├── assets/
-│ ├── css/
-│ │ └── styles.css
-│ └── js/
-│ ├── form.js
-│ └── sort.js
-└── README.md
+- ntwist-frontend-assignment/
+- ├── index.html # Contact Form Page
+- ├── sort.html # Sortable List Page
+- ├── faq.html # FAQ Accordion Page
+─ assets/
+- │ ├── css/
+- │ │ └── styles.css
+- │ └── js/
+- │ ├── form.js
+- │ └── sort.js
+- └── README.md
 
 ---
 
