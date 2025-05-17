@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTWIST - Submissions Viewer</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/sort.css">
+</head>
+<body>
+    <header>
+        <h1>Finmee Technologies (NTWIST)</h1>
+        <p>Submissions Viewer</p>
+    </header>
+
+    <main>
+        <div class="container layout-with-sidebar">
+            <aside class="sidebar">
+                <nav class="sidebar-nav" aria-label="Site Navigation">
+                    <a href="index.html">Contact Form</a>
+                    <a href="sort.html" class="active">Submissions</a>
+                    <a href="faq.html">FAQ</a>
+                </nav>
+
+                <div class="control-buttons">
+                    <button id="sort-button" class="btn">Sort by Name</button>
+                    <button id="shuffle-button" class="btn btn-secondary">Sort by Date</button>
+                    <button id="reset-button" class="btn btn-outline">Clear All</button>
+                </div>
+            </aside>
+
+            <section class="main-content">
+                <div class="card">
+                    <div class="search-container">
+                        <input type="text" id="search-input" class="search-input" placeholder="Search submissions..." aria-label="Search submissions">
+                        <button id="search-button" class="btn search-btn">Search</button>
+                    </div>
+                   
+                    <div class="list-container">
+                        <ul id="name-list" class="name-list">
+                            <!-- List will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                   
+                    <div id="pagination-controls" class="pagination-controls">
+                        <button id="prev-page" class="btn btn-outline page-btn" disabled>Previous</button>
+                        <span id="page-indicator">Page 1 of 1</span>
+                        <button id="next-page" class="btn btn-outline page-btn" disabled>Next</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <script src="assets/js/sort.js"></script>
+</body>
+</html>

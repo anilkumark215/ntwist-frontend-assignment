@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTWIST - FAQ Accordion</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/faq.css">
+</head>
+
+<body>
+    <header>
+        <h1>Finmee Technologies (NTWIST)</h1>
+        <p>FAQ Accordion (No JavaScript)</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Contact Form</a>
+        <a href="sort.html">Sortable List</a>
+        <a href="faq.html" class="active">FAQ</a>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <p class="faq-intro">Get quick answers to common questions about NTWIST’s services, solutions, and
+                    technologies. This accordion is built using only HTML and CSS without JavaScript.</p>
+
+                <div class="faq-container">
+                    <!-- Method 1: Using <details> and <summary> -->
+                    <div class="faq-group">
+                        <h3>General Questions</h3>
+
+                        <details class="faq-item">
+                            <summary class="faq-question">What services does NTWIST offer?</summary>
+                            <div class="faq-answer">
+                                <p>NTWIST provides digital transformation services including advanced data analytics,
+                                    AI-powered industrial solutions, and smart manufacturing tools tailored to improve
+                                    operational efficiency and decision-making.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary class="faq-question">Which industries does NTWIST serve?</summary>
+                            <div class="faq-answer">
+                                <p>NTWIST works with a wide range of industries, including manufacturing, energy,
+                                    mining, and industrial automation. Our solutions are designed to be flexible and
+                                    scalable across sectors that require data-driven insights.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary class="faq-question">Does NTWIST offer customized solutions?</summary>
+                            <div class="faq-answer">
+                                <p>Yes. NTWIST specializes in delivering custom solutions that meet the specific needs
+                                    of each client, using a modular and adaptive approach to integrate with existing
+                                    systems and workflows.</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Method 2: Using checkbox hack -->
+                    <div class="faq-group">
+                        <h3>Technology & Implementation</h3>
+
+                        <div class="faq-item-checkbox">
+                            <input type="checkbox" id="faq1" class="faq-toggle">
+                            <label for="faq1" class="faq-question-checkbox">What technologies does NTWIST use in its
+                                solutions?</label>
+                            <div class="faq-answer-checkbox">
+                                <p>NTWIST leverages modern technologies such as Artificial Intelligence, Machine
+                                    Learning, IoT, Edge Computing, and cloud platforms like Azure and AWS to build
+                                    powerful and reliable industrial solutions.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item-checkbox">
+                            <input type="checkbox" id="faq2" class="faq-toggle">
+                            <label for="faq2" class="faq-question-checkbox">How long does it take to implement an NTWIST
+                                solution?</label>
+                            <div class="faq-answer-checkbox">
+                                <p>Implementation timelines vary depending on the scope and complexity of the project.
+                                    On average, solutions can be rolled out in 4–12 weeks, with initial assessments and
+                                    customization playing a key role in planning.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item-checkbox">
+                            <input type="checkbox" id="faq3" class="faq-toggle">
+                            <label for="faq3" class="faq-question-checkbox">Is training provided for using NTWIST
+                                platforms?</label>
+                            <div class="faq-answer-checkbox">
+                                <p>Yes. NTWIST provides comprehensive training sessions, documentation, and ongoing
+                                    support to ensure that clients can fully leverage the platform’s capabilities with
+                                    confidence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+</body>
+
+</html>

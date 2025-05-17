@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NTWIST - Contact Form</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/form.css" />
+</head>
+<body>
+  <header>
+    <h1>Finmee Technologies (NTWIST)</h1>
+    <p>Responsive Form with Validation</p>
+  </header>
+
+  <main>
+    <div class="container layout-with-sidebar">
+      <aside class="sidebar">
+         <nav class="sidebar-nav" aria-label="Site Navigation">
+                    <a href="index.html" class="active">Contact Form</a>
+                    <a href="sort.html" >Submissions</a>
+                    <a href="faq.html">FAQ</a>
+                </nav>
+
+        <div id="timer-display" class="timer-display">
+          Form filling time: <span id="timer">00:00:00</span>
+        </div>
+      </aside>
+
+      <section class="main-content">
+        <div class="card">
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                required 
+                pattern="[A-Za-z ]{2,50}" 
+                title="Name must be between 2-50 characters and contain only letters and spaces" 
+              />
+              <div class="error-message" id="name-error"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+              <div class="error-message" id="email-error"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="5" 
+                required 
+                minlength="10" 
+                maxlength="500"
+                title="Message must be between 10-500 characters"
+              ></textarea>
+              <div class="error-message" id="message-error"></div>
+            </div>
+
+            <div class="form-group">
+              <label>Rate Your Experience</label>
+              <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5" />
+                <label for="star5" title="5 stars"></label>
+
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4" title="4 stars"></label>
+
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3" title="3 stars"></label>
+
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2" title="2 stars"></label>
+
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1" title="1 star"></label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn">Submit</button>
+          </form>
+
+          <div id="confirmation-message" class="confirmation-message">
+            <h3>Thank you for your submission!</h3>
+            <p>We'll get back to you soon.</p>
+            <p>Your form was completed in: <span id="completion-time"></span></p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  
+  <!-- Chatbot toggle button -->
+<button id="chatbot-toggle" aria-label="Open chat bot" title="Chat with us!">💬</button>
+
+<!-- Chatbot window -->
+<div id="chatbot-window" role="dialog" aria-modal="true" aria-labelledby="chatbot-header-label" aria-hidden="true">
+  <div id="chatbot-header">
+    <span id="chatbot-header-label">Support Chatbot</span>
+    <button id="chatbot-close" aria-label="Close chat bot">&times;</button>
+  </div>
+  <div id="chatbot-messages" role="log" aria-live="polite" aria-atomic="false"></div>
+  <form id="chatbot-form" aria-label="Chat input form">
+    <input id="chatbot-input" type="text" placeholder="Type your question..." aria-required="true" autocomplete="off" />
+    <button id="chatbot-submit" type="submit" aria-label="Send message">Send</button>
+  </form>
+</div>
+
+  
+<!-- Copyright Section -->
+<h6 id="copyright">Copy Right @2025 K ANIL KUMAR</h6>
+
+
+  <script src="assets/js/form.js"></script>
+  <script src="assets/js/chatbot.js"></script>
+
+  
+</body>
+</html>

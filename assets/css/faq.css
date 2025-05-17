@@ -1,0 +1,238 @@
+/* FAQ page styles */
+
+/* Navigation Bar Styles */
+nav {
+    background-color: #2c3e50; /* Dark Blue */
+    display: flex;
+    border: solid 1px #34495e; /* Slightly lighter border */
+    margin-top: 0.05%;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    border-bottom: 1px solid #ecf0f1; /* Light Gray */
+}
+
+nav a {
+    color: #ecf0f1; /* Light Gray */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(236, 240, 241, 0.2); /* Light Gray with transparency */
+}
+
+nav a.active {
+    background-color: #ecf0f1; /* Light Gray */
+    color: #2c3e50; /* Dark Blue */
+}
+
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.faq-intro {
+    margin-bottom: 1.5rem;
+    color: #34495e; /* Darker Gray */
+    font-size: 1rem;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.faq-group {
+    background-color: #ffffff; /* White */
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 1.25rem;
+}
+
+.faq-group h3 {
+    margin-bottom: 1rem;
+    color: #2980b9; /* Bright Blue */
+    border-bottom: 1px solid #ecf0f1; /* Light Gray */
+    padding-bottom: 0.5rem;
+    font-size: 1.125rem;
+}
+
+/* Method 1: Using <details> and <summary> */
+.faq-item {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0.25rem;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.faq-question {
+    padding: 0.75rem 0;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    list-style: none;
+    color: #34495e; /* Darker Gray */
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    font-size: 1.25rem;
+    color: #2980b9; /* Bright Blue */
+    transition: transform 0.3s ease;
+}
+
+details[open] .faq-question::after {
+    content: '−';
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 0 1rem 0;
+    color: #666; /* Medium Gray */
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.faq-answer p,
+.faq-answer ul,
+.faq-answer ol {
+    margin-bottom: 0.75rem;
+}
+
+.faq-answer ul,
+.faq-answer ol {
+    padding-left: 1.25rem;
+}
+
+/* Method 2: Using checkbox hack */
+.faq-item-checkbox {
+    position: relative;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0.25rem;
+}
+
+.faq-item-checkbox:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.faq-toggle {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.faq-question-checkbox {
+    display: block;
+    padding: 0.75rem 1.75rem 0.75rem 0;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    color: #34495e; /* Darker Gray */
+}
+
+.faq-question-checkbox::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 0.75rem;
+    font-size: 1.25rem;
+    color: #2980b9; /* Bright Blue */
+    transition: transform 0.3s ease;
+}
+
+.faq-toggle:checked + .faq-question-checkbox::after {
+    content: '−';
+    transform: rotate(180deg);
+}
+
+.faq-answer-checkbox {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding: 0 1rem 0 0;
+    color: #666; /* Medium Gray */
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.faq-toggle:checked ~ .faq-answer-checkbox {
+    max-height: 500px;
+    padding-bottom: 1rem;
+}
+
+.faq-answer-checkbox p,
+.faq-answer-checkbox ul,
+.faq-answer-checkbox ol {
+    margin-bottom: 0.75rem;
+}
+
+.faq-answer-checkbox ul,
+.faq-answer-checkbox ol {
+    padding-left: 1.25rem;
+}
+
+/* Improved focus states - only show when keyboard focused */
+.faq-question:focus-visible,
+.faq-toggle:focus-visible + .faq-question-checkbox {
+    outline: 2px solid #2980b9; /* Bright Blue */
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.faq-question:focus:not(:focus-visible),
+.faq-toggle:focus:not(:focus-visible) + .faq-question-checkbox {
+    outline: none;
+}
+
+/* Animation for the answers */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+details[open] .faq-answer {
+    animation: slideDown 0.3s ease forwards;
+}
+
+.faq-toggle:checked ~ .faq-answer-checkbox {
+    animation: slideDown 0.3s ease forwards;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .faq-group {
+        padding: 1rem;
+    }
+
+    .faq-question,
+    .faq-question-checkbox {
+        font-size: 0.95rem;
+    }
+
+    .faq-answer,
+    .faq-answer-checkbox {
+        font-size: 0.9rem;
+    }
+}

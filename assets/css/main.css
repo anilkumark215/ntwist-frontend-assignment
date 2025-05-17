@@ -1,0 +1,404 @@
+/* Color Variables */
+:root {
+    --primary-color: #007BFF; /* Bright Blue */
+    --secondary-color: #343A40; /* Dark Gray */
+    --light-color: #F8F9FA; /* Light Gray */
+    --dark-color: #212529; /* Almost Black */
+    --accent-color: #FF6F61; /* Coral */
+    --success-color: #28A745; /* Green for success messages */
+    --error-color: #DC3545; /* Red for error messages */
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --transition: all 0.2s ease;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+    font-size: 14px;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
+
+/* Navigation Styles - Stable Mobile Responsive */
+nav {
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    overflow-x: auto;
+    width: 100%;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    box-shadow: var(--box-shadow); /* Add shadow for depth */
+}
+
+nav .nav-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 100%;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 3px;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+nav a:hover {
+    background-color: var(--accent-color); /* Change hover color to accent */
+}
+
+nav a.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Horizontal Scrollbar Styling */
+nav {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) transparent;
+}
+
+nav::-webkit-scrollbar {
+    height: 6px;
+}
+
+nav::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+nav::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 3px;
+}
+
+/* Responsive Navigation - Minimal Changes */
+@media (max-width: 480px) {
+    nav a {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
+
+/* Container */
+.container {
+    width: 98%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 8px;
+}
+
+/* Header */
+header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.75rem;
+    text-align: center;
+    box-shadow: var(--box-shadow); /* Add shadow for depth */
+}
+
+header h1 {
+    margin-bottom: 0.2rem;
+    font-size: 1.5rem;
+    color: var(--accent-color); /* Change header text color to accent */
+}
+
+/* Sidebar Layout - Enhanced */
+.layout-with-sidebar {
+    display: flex;
+    gap: 1rem;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 1rem;
+    align-self: flex-start;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.625rem 1rem;
+    margin-bottom: 0.25rem;
+    border-radius: 4px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.sidebar-nav a:hover, 
+.sidebar-nav a.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.sidebar-title {
+    color: var(--light-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+}
+
+/* Timer Display */
+.timer-display {
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 3px;
+    margin-top: 1rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker shade for hover */
+    transform: translateY(-1px);
+}
+
+/* Scrollbar Styling for Sidebar */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .layout-with-sidebar {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: static;
+        margin-bottom: 1rem;
+        max-height: none;
+    }
+    
+    .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+    .sidebar-nav a {
+        flex-grow: 1;
+        text-align: center;
+        margin: 0 0.25rem 0.5rem;
+    }
+}
+
+/* Accessibility */
+:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Icon Placeholder (if you want to add icons later) */
+.sidebar-nav a i {
+    margin-right: 0.5rem;
+}
+
+
+/* Copyright */
+#copyright {
+    position: fixed; /* Fixes the position */
+    bottom: 0; /* Aligns it to the bottom of the viewport */
+    left: 0; /* Aligns it to the left */
+    width: 100%; /* Makes it full width */
+    background-color: var(--secondary-color); /* Optional: Background color */
+    color: white; /* Text color */
+    text-align: center; /* Center the text */
+    padding: 10px 0; /* Padding for spacing */
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Optional: Shadow for depth */
+}
+
+
+/* Chatbot styles */
+#chatbot-toggle {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    background-color: #007bff; /* Primary blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    color: white;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    z-index: 1000;
+  }
+  
+  #chatbot-window {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 320px;
+    max-height: 450px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+  }
+  
+
+
+  #chatbot-window.open {
+    display: flex;
+  }
+  
+  #chatbot-header {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 16px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1rem;
+    user-select: none;
+  }
+  
+  #chatbot-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #chatbot-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px 16px;
+    background-color: #f1f5f9;
+  }
+  
+  .chatbot-message {
+    max-width: 85%;
+    margin-bottom: 10px;
+    padding: 10px 14px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    word-wrap: break-word;
+  }
+  
+  .chatbot-message.bot {
+    background-color: #e1e8ff;
+    color: #222;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+  }
+  
+  .chatbot-message.user {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+  }
+  
+  #chatbot-form {
+    display: flex;
+    border-top: 1px solid #ccc;
+    padding: 8px 10px;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  #chatbot-input {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+  }
+  
+  #chatbot-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 6px rgba(0,123,255,0.5);
+  }
+  
+  #chatbot-submit {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-left: 8px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  #chatbot-submit:hover {
+    background-color: #0056b3;
+  }
+  
