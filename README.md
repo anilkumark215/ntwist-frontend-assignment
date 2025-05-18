@@ -27,7 +27,7 @@ To run the project locally, follow the instructions below.
 
 ## 🌐 Pages Implemented
 
-### ✅ Page 1: Contact Form with Validation (index.html)
+### ✅ Page 1: Contact Form with Validation (index.html) With CHAT BOT (FAQs) adedd
 
 - Fields: Name, Email, Message
 - HTML5 validation for input fields
